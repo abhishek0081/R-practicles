@@ -1,0 +1,155 @@
+> #To Enter Data of each Variable through Vector
+> rollnumber=c(seq(1,20)) 
+> section=c(rep("A",7),rep("B",7),rep("C",6)) 
+> Sub1=c(56,78,89,99,34,67,89,99,100,98,97,96,54,34,67,89,34,78,99,76) 
+> Sub2=c(43,67,88,78,34,23,99,98,100,76,89,23,56,78,99,100,23,89,99,78)  
+> Sub3=c(43,89,99,10,54,67,88,99,100,78,99,100,100,98,76,56,34,56,23,45)
+> 
+> #Combining Data Set into Matrix Form
+> data=cbind(sub1,sub2,sub3)
+> data
+      sub1 sub2 sub3
+ [1,]   23   43    3
+ [2,]   34   24   54
+ [3,]   45   42   52
+ [4,]   67    7   37
+ [5,]   65    5   55
+ [6,]   45   95   55
+ [7,]   34   74   24
+ [8,]   23   63   13
+ [9,]   45   65   45
+[10,]   56   56   66
+[11,]   54   54   64
+[12,]    5   55   75
+[13,]   66   56    7
+[14,]   34   54   74
+[15,]   56   46   43
+[16,]    7   67   47
+[17,]    4   76   26
+[18,]   53   83   23
+[19,]   24   54   64
+[20,]   42   72   82
+> data=cbind(rollnumber,section,sub1,sub2,sub3)
+> data
+      rollnumber section sub1 sub2 sub3
+ [1,] "1"        "A"     "23" "43" "3" 
+ [2,] "2"        "A"     "34" "24" "54"
+ [3,] "3"        "A"     "45" "42" "52"
+ [4,] "4"        "A"     "67" "7"  "37"
+ [5,] "5"        "A"     "65" "5"  "55"
+ [6,] "6"        "A"     "45" "95" "55"
+ [7,] "7"        "A"     "34" "74" "24"
+ [8,] "8"        "B"     "23" "63" "13"
+ [9,] "9"        "B"     "45" "65" "45"
+[10,] "10"       "B"     "56" "56" "66"
+[11,] "11"       "B"     "54" "54" "64"
+[12,] "12"       "B"     "5"  "55" "75"
+[13,] "13"       "B"     "66" "56" "7" 
+[14,] "14"       "B"     "34" "54" "74"
+[15,] "15"       "C"     "56" "46" "43"
+[16,] "16"       "C"     "7"  "67" "47"
+[17,] "17"       "C"     "4"  "76" "26"
+[18,] "18"       "C"     "53" "83" "23"
+[19,] "19"       "C"     "24" "54" "64"
+[20,] "20"       "C"     "42" "72" "82"
+> data=data.frame(rollnumber,section,Sub1,Sub2,Sub3,stringsAsFactors=T)
+> data
+   rollnumber section Sub1 Sub2 Sub3
+1           1       A   56   43   43
+2           2       A   78   67   89
+3           3       A   89   88   99
+4           4       A   99   78   10
+5           5       A   34   34   54
+6           6       A   67   23   67
+7           7       A   89   99   88
+8           8       B   99   98   99
+9           9       B  100  100  100
+10         10       B   98   76   78
+11         11       B   97   89   99
+12         12       B   96   23  100
+13         13       B   54   56  100
+14         14       B   34   78   98
+15         15       C   67   99   76
+16         16       C   89  100   56
+17         17       C   34   23   34
+18         18       C   78   89   56
+19         19       C   99   99   23
+20         20       C   76   78   45
+> data1=data.frame(rollnumber,section,Sub1,Sub2,Sub3)
+> 
+> #Examining the structures of objects contained within these Dataframes
+> str(data)
+'data.frame':   20 obs. of  5 variables:
+ $ rollnumber: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ section   : Factor w/ 3 levels "A","B","C": 1 1 1 1 1 1 1 2 2 2 ...
+ $ Sub1      : num  56 78 89 99 34 67 89 99 100 98 ...
+ $ Sub2      : num  43 67 88 78 34 23 99 98 100 76 ...
+ $ Sub3      : num  43 89 99 10 54 67 88 99 100 78 ...
+> str(data1)
+'data.frame':   20 obs. of  5 variables:
+ $ rollnumber: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ section   : chr  "A" "A" "A" "A" ...
+ $ Sub1      : num  56 78 89 99 34 67 89 99 100 98 ...
+ $ Sub2      : num  43 67 88 78 34 23 99 98 100 76 ...
+ $ Sub3      : num  43 89 99 10 54 67 88 99 100 78 ...
+> 
+> #Find the Total Marks
+> total.marks=rowSums(data[,c(3,4,5)])
+> total.marks
+ [1] 142 234 276 187 122 157 276 296 300 252 285 219 210 210 242 245  91 223 221
+[20] 199
+> 
+> #Find the Average Marks
+> average=rowMeans(data[,c(3,4,5)])
+> average
+ [1]  47.33333  78.00000  92.00000  62.33333  40.66667  52.33333  92.00000
+ [8]  98.66667 100.00000  84.00000  95.00000  73.00000  70.00000  70.00000
+[15]  80.66667  81.66667  30.33333  74.33333  73.66667  66.33333
+> 
+> #Recoding the data into a new variable which represent the grade
+> grade=c()   #create an empty vector object
+> grade[average>=85]=1
+> grade[average<85&average>=75]=2
+> grade[average<75]=3
+> grade
+ [1] 3 2 1 3 3 3 1 1 1 2 1 3 3 3 2 2 3 3 3 3
+> str(grade)
+ num [1:20] 3 2 1 3 3 3 1 1 1 2 ...
+> grade=factor(grade,label=c("Grade A","Grade B","Grade C"))
+> str(grade)
+ Factor w/ 3 levels "Grade A","Grade B",..: 3 2 1 3 3 3 1 1 1 2 ...
+> 
+> #Add the new variables to the dataframe.
+> data.new=data.frame(data,total.marks,average,grade)
+> data.new
+   rollnumber section Sub1 Sub2 Sub3 total.marks   average   grade
+1           1       A   56   43   43         142  47.33333 Grade C
+2           2       A   78   67   89         234  78.00000 Grade B
+3           3       A   89   88   99         276  92.00000 Grade A
+4           4       A   99   78   10         187  62.33333 Grade C
+5           5       A   34   34   54         122  40.66667 Grade C
+6           6       A   67   23   67         157  52.33333 Grade C
+7           7       A   89   99   88         276  92.00000 Grade A
+8           8       B   99   98   99         296  98.66667 Grade A
+9           9       B  100  100  100         300 100.00000 Grade A
+10         10       B   98   76   78         252  84.00000 Grade B
+11         11       B   97   89   99         285  95.00000 Grade A
+12         12       B   96   23  100         219  73.00000 Grade C
+13         13       B   54   56  100         210  70.00000 Grade C
+14         14       B   34   78   98         210  70.00000 Grade C
+15         15       C   67   99   76         242  80.66667 Grade B
+16         16       C   89  100   56         245  81.66667 Grade B
+17         17       C   34   23   34          91  30.33333 Grade C
+18         18       C   78   89   56         223  74.33333 Grade C
+19         19       C   99   99   23         221  73.66667 Grade C
+20         20       C   76   78   45         199  66.33333 Grade C
+> 
+> # Constructing a contingency table between section and grade.
+> cross.tab <- table(data.new$section,data.new$grade)
+> cross.tab
+   
+    Grade A Grade B Grade C
+  A       2       1       4
+  B       3       1       3
+  C       0       2       4
+> 

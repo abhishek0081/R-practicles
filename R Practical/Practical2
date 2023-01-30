@@ -1,0 +1,141 @@
+> #To Enter Data of each Variable through Vector
+> rollnumber=c(seq(1,20)) 
+> section=c(rep("A",7),rep("B",7),rep("C",6)) 
+> Sub1=c(56,78,89,99,34,67,89,99,100,98,97,96,54,34,67,89,34,78,99,76) 
+> Sub2=c(43,67,88,78,34,23,99,98,100,76,89,23,56,78,99,100,23,89,99,78)  
+> Sub3=c(43,89,99,10,54,67,88,99,100,78,99,100,100,98,76,56,34,56,23,45)
+> 
+> #Combining Data Set into Matrix Form
+> raw.data <- c(rollnumber,section,Sub1,Sub2,Sub3)
+> mat.data=matrix(raw.data,ncol=5)
+> mat.data
+      [,1] [,2] [,3]  [,4]  [,5] 
+ [1,] "1"  "A"  "56"  "43"  "43" 
+ [2,] "2"  "A"  "78"  "67"  "89" 
+ [3,] "3"  "A"  "89"  "88"  "99" 
+ [4,] "4"  "A"  "99"  "78"  "10" 
+ [5,] "5"  "A"  "34"  "34"  "54" 
+ [6,] "6"  "A"  "67"  "23"  "67" 
+ [7,] "7"  "A"  "89"  "99"  "88" 
+ [8,] "8"  "B"  "99"  "98"  "99" 
+ [9,] "9"  "B"  "100" "100" "100"
+[10,] "10" "B"  "98"  "76"  "78" 
+[11,] "11" "B"  "97"  "89"  "99" 
+[12,] "12" "B"  "96"  "23"  "100"
+[13,] "13" "B"  "54"  "56"  "100"
+[14,] "14" "B"  "34"  "78"  "98" 
+[15,] "15" "C"  "67"  "99"  "76" 
+[16,] "16" "C"  "89"  "100" "56" 
+[17,] "17" "C"  "34"  "23"  "34" 
+[18,] "18" "C"  "78"  "89"  "56" 
+[19,] "19" "C"  "99"  "99"  "23" 
+[20,] "20" "C"  "76"  "78"  "45" 
+> 
+> #Examining the matrix structure
+> str(mat.data)
+ chr [1:20, 1:5] "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "A" "A" "A" "A" "A" "A" "A" "B" "B" "B" "B" "B" "B" ...
+> 
+> #Enter the Data in a Dataframe structure
+> data=data.frame(rollnumber,section,Sub1,Sub2,Sub3,stringsAsFactors=T)
+> data 
+   rollnumber section Sub1 Sub2 Sub3
+1           1       A   56   43   43
+2           2       A   78   67   89
+3           3       A   89   88   99
+4           4       A   99   78   10
+5           5       A   34   34   54
+6           6       A   67   23   67
+7           7       A   89   99   88
+8           8       B   99   98   99
+9           9       B  100  100  100
+10         10       B   98   76   78
+11         11       B   97   89   99
+12         12       B   96   23  100
+13         13       B   54   56  100
+14         14       B   34   78   98
+15         15       C   67   99   76
+16         16       C   89  100   56
+17         17       C   34   23   34
+18         18       C   78   89   56
+19         19       C   99   99   23
+20         20       C   76   78   45
+> data1=data.frame(rollnumber,section,Sub1,Sub2,Sub3)
+> 
+> #Examining the structures of objects contained within these Dataframes
+> str(data)
+'data.frame':   20 obs. of  5 variables:
+ $ rollnumber: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ section   : Factor w/ 3 levels "A","B","C": 1 1 1 1 1 1 1 2 2 2 ...
+ $ Sub1      : num  56 78 89 99 34 67 89 99 100 98 ...
+ $ Sub2      : num  43 67 88 78 34 23 99 98 100 76 ...
+ $ Sub3      : num  43 89 99 10 54 67 88 99 100 78 ...
+> str(data1)
+'data.frame':   20 obs. of  5 variables:
+ $ rollnumber: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ section   : chr  "A" "A" "A" "A" ...
+ $ Sub1      : num  56 78 89 99 34 67 89 99 100 98 ...
+ $ Sub2      : num  43 67 88 78 34 23 99 98 100 76 ...
+ $ Sub3      : num  43 89 99 10 54 67 88 99 100 78 ...
+> 
+> #Find the Total Marks
+> total.marks=rowSums(data[,c(3,4,5)])
+> total.marks
+ [1] 142 234 276 187 122 157 276 296 300 252 285 219 210 210 242 245  91 223 221 199
+> 
+> #Find the Average Marks
+> average=rowMeans(data[,c(3,4,5)])
+> average
+ [1]  47.33333  78.00000  92.00000  62.33333  40.66667  52.33333  92.00000  98.66667 100.00000  84.00000  95.00000  73.00000  70.00000  70.00000  80.66667  81.66667
+[17]  30.33333  74.33333  73.66667  66.33333
+> 
+> #Recoding the data into a new variable which represent the grade
+> grade=c()   #create an empty vector object
+> grade[average>=85]=1
+> grade[average<85&average>=75]=2
+> grade[average<75]=3
+> grade
+ [1] 3 2 1 3 3 3 1 1 1 2 1 3 3 3 2 2 3 3 3 3
+> str(grade)
+ num [1:20] 3 2 1 3 3 3 1 1 1 2 ...
+> grade=factor(grade,label=c("Grade A","Grade B","Grade C"))
+> str(grade)
+ Factor w/ 3 levels "Grade A","Grade B",..: 3 2 1 3 3 3 1 1 1 2 ...
+> 
+> #Add the new variables to the dataframe.
+> data.new=data.frame(data,total.marks,average,grade)
+> data.new
+   rollnumber section Sub1 Sub2 Sub3 total.marks   average   grade
+1           1       A   56   43   43         142  47.33333 Grade C
+2           2       A   78   67   89         234  78.00000 Grade B
+3           3       A   89   88   99         276  92.00000 Grade A
+4           4       A   99   78   10         187  62.33333 Grade C
+5           5       A   34   34   54         122  40.66667 Grade C
+6           6       A   67   23   67         157  52.33333 Grade C
+7           7       A   89   99   88         276  92.00000 Grade A
+8           8       B   99   98   99         296  98.66667 Grade A
+9           9       B  100  100  100         300 100.00000 Grade A
+10         10       B   98   76   78         252  84.00000 Grade B
+11         11       B   97   89   99         285  95.00000 Grade A
+12         12       B   96   23  100         219  73.00000 Grade C
+13         13       B   54   56  100         210  70.00000 Grade C
+14         14       B   34   78   98         210  70.00000 Grade C
+15         15       C   67   99   76         242  80.66667 Grade B
+16         16       C   89  100   56         245  81.66667 Grade B
+17         17       C   34   23   34          91  30.33333 Grade C
+18         18       C   78   89   56         223  74.33333 Grade C
+19         19       C   99   99   23         221  73.66667 Grade C
+20         20       C   76   78   45         199  66.33333 Grade C
+> 
+> # Constructing a contingency table between section and grade.
+> cross.tab <- table(data.new$section,data.new$grade)
+> cross.tab
+   
+    Grade A Grade B Grade C
+  A       2       1       4
+  B       3       1       3
+  C       0       2       4
+> n()
+Error in n() : could not find function "n"
+> N()
+Error in N() : could not find function "N"
+> 

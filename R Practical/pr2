@@ -1,0 +1,118 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> x=c(2,6,7,8,9,4)
+> mat=matrix(x,ncol=2)
+> mat
+     [,1] [,2]
+[1,]    2    8
+[2,]    6    9
+[3,]    7    4
+> mat=matrix(x,ncol=2,byrow=T)
+> mat
+     [,1] [,2]
+[1,]    2    6
+[2,]    7    8
+[3,]    9    4
+> x=rep(c(2:4),3)
+> mat=matrix(x,ncol=3)
+> mat
+     [,1] [,2] [,3]
+[1,]    2    2    2
+[2,]    3    3    3
+[3,]    4    4    4
+> x=c(2,6,7,8,9,4,11)
+> mat1=matrix(x,nrow=2)
+Warning message:
+In matrix(x, nrow = 2) :
+  data length [7] is not a sub-multiple or multiple of the number of rows [2]
+> mat
+     [,1] [,2] [,3]
+[1,]    2    2    2
+[2,]    3    3    3
+[3,]    4    4    4
+> mat1
+     [,1] [,2] [,3] [,4]
+[1,]    2    7    9   11
+[2,]    6    8    4    2
+> length(x)=8
+> mat1
+     [,1] [,2] [,3] [,4]
+[1,]    2    7    9   11
+[2,]    6    8    4    2
+> x
+[1]  2  6  7  8  9  4 11 NA
+> mat2=matrix(x,nrow=2)
+> MAT2
+Error: object 'MAT2' not found
+> mat2
+     [,1] [,2] [,3] [,4]
+[1,]    2    7    9   11
+[2,]    6    8    4   NA
+> mat1[2,3]
+[1] 4
+> mat1[2,4]
+[1] 2
+> mat2[2,4]
+[1] NA
+> mat1[1,c(2:4)]
+[1]  7  9 11
+> mat1[,c(2:4)]
+     [,1] [,2] [,3]
+[1,]    7    9   11
+[2,]    8    4    2
+> mat1[,-c(2:4)]
+[1] 2 6
+> mat1[-c(2),1]
+[1] 2
+> mat1[c(2),1]
+[1] 6
+> y=mat1[,]mat2[,]
+Error: unexpected symbol in "y=mat1[,]mat2"
+> 
+
+> #'list'
+> predictor=c(rep("A",4),rep("B",7))
+> response=c(5,7,9,10,12,11)
+> list1=list(response,predictor)
+> list1
+[[1]]
+[1]  5  7  9 10 12 11
+
+[[2]]
+ [1] "A" "A" "A" "A" "B" "B" "B" "B" "B" "B" "B"
+
+> list2=list(response=response,predictor=predictor)
+> list2
+$response
+[1]  5  7  9 10 12 11
+
+$predictor
+ [1] "A" "A" "A" "A" "B" "B" "B" "B" "B" "B" "B"
+
+> list2[predictor,8]
+Error in list2[predictor, 8] : incorrect number of dimensions
+> list2$predictor[2]
+[1] "A"
+> z=list2$predictor
+> z
+ [1] "A" "A" "A" "A" "B" "B" "B" "B" "B" "B" "B"
+> 

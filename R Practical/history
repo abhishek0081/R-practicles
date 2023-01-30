@@ -1,0 +1,512 @@
+mean(range(1,1000,2))
+mean(range(1,10000,2))
+mean(range(1,10000,12325))
+gl(3,1000)
+gl(4,3)
+source('~/.active-rstudio-document', echo=TRUE)
+gl(4,1/0)
+levels(lv)
+levels(lv)
+lv < - c(T,F,T)
+levels(lv)
+lv <- c(T,F,T)
+levels(lv)
+is,logical(lv)
+is.logical(lv)
+x <- 0:1000
+sum(x)
+multipleClasses(x)
+sum(x[x<595])
+sub(x)
+sub(x,0)
+sub(x,x)
+sub(1000,x)
+sub(10x)
+sub(10:x)
+sub(10:x:9)
+attach(data)
+names(data)
+attach(data)
+names(data)
+tapply(100, 23, 2x+45y+56z-67f)
+counts <- rnbinom(10000,mu=0.92,size = 1.1)
+counts[1:30]
+table(counts)
+View(bacteria)
+q()
+x <- 0:10
+sum(x<5)
+sum(x>5)
+sum(x[x<5])
+x<5
+x>5
+x<=5
+1*(x<5)
+x*(x<5)
+x*(x>10)
+x*(x<10)
+x*(x<11)
+x*(x<1/0)
+x*(x<(1/0))
+x <- 0:1/0
+x*(x<(1/0))
+x*(x<5)
+1*(x<5)
+x>5
+x<5
+sum(x[x<5])
+sum(x>5)
+x <- 0:(1/0)
+x <- 0:100:10
+x <- 0:90:10
+x <- 0:90:1
+x <- 0:90:0
+x <- 0:90
+x*(x<(1/0))
+x*(x<(1/0))
+x <- 0:90000
+x*(x<(1/0))
+sum(x[x<5])
+sum(x>5)
+x*(x<5)
+x*(x>5)
+x*(x<(1/0))
+hist(x)
+hist(x>889)
+hist(x>88)
+hist(x=90)
+hist(x)
+a <- rnorm(10,25,20)
+View(draw.plotmath.cell)
+xv <- rnorm(1000,100,10)
+which(abs(xv-108)==min(abs(xv-108)))
+which(abs(xv-108)==min(abs(xv-108)))
+xv <- rnorm(1000,100,10)
+xv <- rnorm(1000,100,10)
+which(abs(xv-108)==min(abs(xv-108)))
+xv <- rnorm(1000,100,10)
+which(abs(xv-108)==min(abs(xv-108)))
+x*(x>5)
+sum(x*(x<5))
+sum(x*(x>5))
+y <- c(8,3,45,67,32143,212,45,58,2,3,5,7,8,6,0)
+sort(y)
+rev(sort(y))
+sum(rev(sort(y))[1:3])
+sum(rev(sort(y))[1:0])
+sum(rev(sort(y))[1:3])
+which(x==max(x))
+which(x==min(x))
+which.max(x)
+which.min(x)
+mean(y,x)
+mean(y)
+cov(x,y)
+x <- 0:90000
+y <- c(8,3,45,67,32143,212,45,58,2,3,5,7,8,6,0)
+cov(x,y)
+y <- 0:1000
+cov(x,y)
+x <- 0:90000
+sum(rev(sort(y))[1:3])
+y <- 0:1000
+x <- 0:90000
+cov(x,y,7)
+cov(x,y)
+cov(x,y,0)
+cov(x,9,0)
+cov(3,9,0)
+cov(7,8)
+cov(x,y)
+cov(345432,5236345)
+source('~/.active-rstudio-document', echo=TRUE)
+cov(0,111)
+/sdakm
+//fefm
+cov(x,65)
+cov(3:32,65)
+range(y)
+fivenum(y)
+counts <- rnbinom(10000,mu=0.92,size = 1.1)
+counts[1:1000]
+counts[1:1000]table(counts)
+table(counts)
+library(survey)
+View(make.table)
+View(oldpar)
+View(gapminder)
+counts
+table(counts)
+counts <- rnbinom(10000,mu=0.92,size = 1.1)
+counts[1:1000]
+table(counts)
+counts
+table(counts)
+tapply(temperature, yr, mean,na.rm=TRUE)
+poisson(0.95)
+(poisson <- rpois(150,0.7))
+rle(poisson)
+max(rle(poisson))
+max(rle(poisson))[[1]]
+max(rle(poisson)[[1]])
+max(rle(poisson)[[1]]==7)
+which(rle(poisson)[[1]]==7)
+which(rle(poisson)[[1]]==7)
+rle(poisson)[[2]][[5]]
+rle(poisson)[[2]][[5]]
+rle(poisson)[[2]][[5]]
+rle(poisson)[[2]][[98]]
+rle(poisson)[[2]][[1]]
+run.and.value(poisson)
+run,and.value(poisson)
+run.and.value(poisson)
+run.and.value <- function(x){
+a <- max(rle(poisson)[[1]])
+b <- rle(posisson)[[2]][which(rle(poisson)[[1]] == a)]
+cat("length = ",a,"value = ",b"\n")}
+run.and.value(poisson)
+length = 7 value = 0
+length(rle(poisson)[[2]])
+length(rle(poisson)[[2]])
+(poisson <- rpois(150,0.7))
+counts <- rnbinom(10000,mu=0.92,size = 1.1)
+(poisson <- rpois(150,0.7))
+rle(poisson)
+which(rle(poisson)[[1]]==7)
+rle(poisson)[[2]][[1]]
+run.and.value <- function(x){
+a <- max(rle(poisson)[[1]])
+b <- rle(posisson)[[2]][which(rle(poisson)[[1]] == a)]
+cat("length = ",a,"value = ",b"\n")}
+run.and.value(poisson)
+length = 7 value = 0
+length(rle(poisson)[[2]])
+source('~/.active-rstudio-document', echo=TRUE)
+install.packages("PACKAGE:DATA SETS")
+install.packages("learnr")
+install.packages("PACKAGE:DATA SETS")
+library(ggplot2)
+install.packages('ggplot2')
+install.packages('ggplot2')
+library(ggplot2)
+install.packages('ggplot2')
+mpg
+X = LOG(2)
+X = C(10,20,30,40)
+X = C(10,20,30,40)
+x = c(10,20,30,40)
+x
+mean(x)
+median(x)
+mode(x)
+# to enter data in r console in vector form (single var)
+#to create a numeric object (or variable
+y = c(11,12,13)
+z = c(x,y)
+mean(z)
+cov(z)
+co varince(z)
+# to enter text or string object
+A = C("section A","section b")
+A = c("dsa","dawfa")
+A
+# x is a numeric object & A is text .Then  combine (x & A )
+B = c(x,A)
+B
+#To  enter patterd  data
+# TO ENTER PATTERNED DATA
+# command names :"rep()"& "seq()"
+x = rep(2,7)
+# rep(vslue, no of times)
+x
+y = rep(c(1,2),3)
+y
+z =rep(c(1,2),c(3,3))
+z
+f = rep(c(1,2,3),c(1,2,3))
+f
+z = rep(c(1:100),c(1:1))
+z
+A = rep("low","high"),c(2,2))
+A
+A = rep(c("low","high"),c(2,2))
+A
+# seq (from value, to value, by differnce
+a = seq(1,20,5)
+a
+a = seq(1,100,4)
+a
+a = seq(1,20,2)
+a
+b = rep(seq(2,20,4),2)
+b
+b = seq(rep(seq(2,20,4),c(1:5)),100,2)
+b = seq(rep(seq(2,20,4),c(1:5)),20,2)
+b = seq(rep(seq(2,20,4),c(1:5)),10,2)
+b = rep(rep(seq(2,20,4),c(1:5)),100)
+b
+q()
+x=seq(12:134:4)
+x=seq(1,23,11)
+x
+x=rep(c(1:100),c(2:4)
+x=rep(c(1:100),c(2:4)
+x=rep(c(1:100),c(2:4)
+x=rep(c(1:100),c(2:4)
+x=rep(c(1:100),c(2:4)
+x=rep(c(1:100),c(2:4)
+x
+x=rep(c(1:100),c(2:4))
+x=rep(c(1:100),2)
+x
+x=seq(c(1:56),3,2)
+x=seq(1,34,6)
+y=seq(1,90,35
+z=xy
+y=seq(1.90,35)
+z=xy
+z=c(x,y)
+mean(z)
+median(z)
+mode(z)
+z
+z=c(xy)
+z=c(xyz)
+f=c(x,y,z)
+mean(f,z)
+var(z)
+var(x,y,z,f)
+var(z,y,f)
+var(z,f)
+var(f)
+cov
+mean
+cov
+cov(x,y)
+covarince(x,y)
+cov(x)
+cov(xy)
+cov(x,f)
+mode
+median
+rep
+seq
+int
+integer
+integer(x,y,z,f)
+integer(x)
+mod
+mod
+Mod
+Arg
+Conj
+TRUE
+FALSE
+Mod(z)
+Arg(z)
+Arg(z,f)
+MOd( z,f)
+Mod(z,f)
+as.complex(z)
+exp(-2)
+exp(-1)
+exp(-1/0)
+log(o)
+log(0)
+log(-0)
+log(1/0)
+log(pi/2)
+log(cos(sin(pi/35)))
+sininv(1)
+sinh(1)
+sin(1)
+q()
+q()
+x=seq(c(1:56),3,2)
+x=seq(c(1,3,2)
+x
+x
+x=seq(c(1,3,2))
+x
+\\
+/\
+/\3
+3#
+23
+34+
+2432+$2
+24+42
+x=(1,2,3,45,6,78)
+x=c(1,2,3,45,6,78)
+y=c("abhishek kumar","open","closed","open","closed")
+file1=list(Number=x,Area=y)
+file1
+list
+#to check nature
+str(file1
+str(file1)
+str(file1)
+#Data frame
+data1=data.frame(x,y)
+y=legth(5)
+y=length(5)
+y
+data1=data.frame(x,y)
+data1
+colnames(data1)c("Number","Area")
+colnames(data1)=c("Number","Area")
+rownames(data1)=c("a1","a2","a3","a4","a5")
+rownames(data1)=c("a1","a2","a3","a4","a5","a6")
+data1
+y=c("abhishek kumar","open","closed","open","closed","open")
+data1
+file1=list(Number=x,Area=y)
+data1=data.frame(x,y)
+colnames(data1)=c("Number","Area")
+rownames(data1)=c("a1","a2","a3","a4","a5","a6")
+data1
+class(data1)
+objects(data1)
+str(data1)
+y=c("closed","open","closed","open","closed","open")
+file1=list(Number=x,Area=y)
+data1=data.frame(x,y)
+colnames(data1)=c("Number","Area")
+rownames(data1)=c("a1","a2","a3","a4","a5","a6")
+data1
+str(data1)
+data2=data.frame(x,y,stringAsFactor=T)
+data2
+str(data2)
+data2=data.frame(x,y,stringAsFactor=F)
+str(data2)
+data2=data.frame(x,y, stringAsFactor=F)
+data2
+str(data2)'
+str(data2)
+'
+str(data2)
+data2$x
+z=data2$x
+data2
+dta3=data.frame(x,y)
+dta3
+z
+x=seq(1,100,1)
+x
+y=seq(a,z,)
+y=rep(c("open","closed"),100)
+y
+data3=data.frame(x,y)
+colnames(data3)=c("number","area")
+rownames=rep(c(a:z),100)
+data3=data.frame(x,y, stringAsFactor=F)
+str(data3
+;
+str(data3)
+data3
+q()
+q
+q()
+#practical 2
+#To Enter Data ofj each Variable through Vector
+#To Enter Data of each Variable throgh Vector
+#To Enter Data for five Variable through Vector
+#Two Sring var ROll NO. and Section for 20 students
+#threee numeric var on marks in three subjects
+Roll_no=seq(1:20)
+Roll_no
+section=rep(c("Section A","Section B","Section C"),c(7,7,6))
+section
+sub1=random(1:100)
+sub1=c(23,34,45,67,65,45,34,23,45,56,54,5,66,34,56,7,4,53,24,42)
+sub2=c(43,24,42,7,5,95,74,63,65,56,54,55,56,54,46,67,76,83,54,72)
+sub3=c(3,54,52,37,55,55,24,13,45,66,64,75,7,74,43,47,26,23,64,82)
+#Q1:Construct a dataframe of above five variables.
+#Q2:Construct a dataframe of above five variables and examine the structure of this file.
+data1=data.frame(Roll_no,section,sub1,sub2,sub3)
+data1
+str(data1)
+data1=data.frame(Roll_no,section,sub1,sub2,sub3,stringsAsFactor=T)
+str(data1)
+#Total and average marks for each student
+total.marks=rowSums(data1[,c(3,4,5)])
+total.marks
+average.marks=rowMeans(data1[,c(3,4,5)])
+average.marks
+#Grade the students
+#a/c to avg marks
+grade=c()
+grade[average.marks>=85]=1
+grade[average.marks<85 & average.marks>=65]=2
+grade[average.marks<65]=3
+grade
+#Convert grade to a factor variable with lables A,B,C
+grade=factor(grade,label=c("A","B","C"))
+grade
+grade=c("A"=1,"B"=2,"C"=3)
+data2=data.frame(data1,total.marks,average.marks,grade)
+grade=c(A=1,B=2,C=3)
+data2=data.frame(data1,total.marks,average.marks,grade)
+grade=c(B=2,C=3)
+data2=data.frame(data1,total.marks,average.marks,grade)
+grade=factor(grade,label=c("B","C"))
+data2=data.frame(data1,total.marks,average.marks,grade)
+grade=factor(grade,label=c("A","B","C"))
+data2=data.frame(data1,total.marks,average.marks,grade)
+data2
+grade=factor(grade,label=c("B","C"))
+data2=data.frame(data1,total.marks,average.marks,grade)
+data2
+grade=c()
+grade[average.marks>=85]=1
+grade[average.marks<85 & average.marks>=65]=2
+grade[average.marks<65]=3
+grade
+grade=factor(grade,label=c("B","C"))
+data2=data.frame(data1,total.marks,average.marks,grade)
+data2
+#contigency table between Section and Grade of the students USe var from the dataframe
+table(data2$Section, data2$grade)
+table(data2$section, data2$grade)
+q()
+# practical 3
+#CLUSTER BAR PLOT
+woodland=c(2,1,2,2,1) 
+garden=c(47,19,50,46,9) 
+hedgerow=c(16,3,3,16,3) 
+pasture=c(2,1,7,1,4) 
+parkland=c(40,5,10,8,7) 
+birds=matrix(c(woodland,garden,hedgerow,pasture,parkland), nrow=5)
+rownames(birds)=c("Blackbird","House Sparrow","Robin","Songthrush","Myna") 
+colnames(birds)=c("woodland","garden","hedgerow","pasture","parkland")
+birds
+barplot(birds,xlab="Habitat",ylab="Species of Birds",main="Stacked BAR PLOT", ylim=c(0,200), legend=TRUE)
+#To Draw Cluster Bar Chart: Clusters defined column-wise.
+barplot(birds,beside=TRUE,xlab="Habitat",ylab="Species of Birds",main="Clustered BAR PLOT",ylim=c(0,70),legend=TRUE)
+barplot(birds,beside=TRUE,xlab="Habitat",ylab="Species of Birds",main="Clustered BAR PLOT",ylim=c(0,70),legend=TRUE,col=c("red"))
+barplot(birds,beside=TRUE,xlab="Habitat",ylab="Species of Birds",main="Clustered BAR PLOT",ylim=c(0,70),legend=TRUE,col=c("red","white","green","orange","blue"))
+barplot(birds,beside=TRUE,xlab="Habitat",ylab="Species of Birds",main="Clustered BAR PLOT",ylim=c(0,70),legend=TRUE,col=c("red","black","green","orange","blue"))
+local({pkg <- select.list(sort(.packages(all.available = TRUE)),graphics=TRUE)
+if(nchar(pkg)) library(pkg, character.only=TRUE)})
+utils:::menuInstallPkgs()
+#PRACTICAL 4
+birds
+#PRACTICAL 4
+faithful
+head(faithful)
+tail(faithful)
+str(faithful)
+#continous Frequency Dist Table
+range(faithful$eruptions)
+#Define Class Interval
+breaks=seq(1.5,5.5,by=0.5)
+braks
+breaks
+class.int=cut(faithful$eruptions,breaks,right=F)
+clas.int
+class.int
+frequency=table(class.int)
+frequency
+relative.freq=frequency/272
+relative.freq

@@ -1,0 +1,185 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> woodland=c(2,1,2,2,1)
+> garden=c(47,19,50,46,9)
+> hedegrow=c(16,3,3,16,3)
+> pasture=c(2,1,7,1,4)
+> parkland=c(40,5,10,8,7)
+> mat=cbind(woodland,garden,hedegrow,pasture,parkland)
+> rownames(mat)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+> mat1=matrix(mat)
+> mat1
+      [,1]
+ [1,]    2
+ [2,]    1
+ [3,]    2
+ [4,]    2
+ [5,]    1
+ [6,]   47
+ [7,]   19
+ [8,]   50
+ [9,]   46
+[10,]    9
+[11,]   16
+[12,]    3
+[13,]    3
+[14,]   16
+[15,]    3
+[16,]    2
+[17,]    1
+[18,]    7
+[19,]    1
+[20,]    4
+[21,]   40
+[22,]    5
+[23,]   10
+[24,]    8
+[25,]    7
+> mat1=matrix(mat,nrow=5)
+> mat1
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    2   47   16    2   40
+[2,]    1   19    3    1    5
+[3,]    2   50    3    7   10
+[4,]    2   46   16    1    8
+[5,]    1    9    3    4    7
+> rownames(mat)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+> woodland=c(2,1,2,2,1)
+> garden=c(47,19,50,46,9)
+> hedegrow=c(16,3,3,16,3)
+> pasture=c(2,1,7,1,4)
+> parkland=c(40,5,10,8,7)
+> mat=cbind("woodland","garden","hedegrow","pasture","parkland")
+> rownames(mat)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+Error in dimnames(x) <- dn : 
+  length of 'dimnames' [1] not equal to array extent
+> mat1=matrix(mat,nrow=5)
+> rownames(mat)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+Error in dimnames(x) <- dn : 
+  length of 'dimnames' [1] not equal to array extent
+> rownames(mat1)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+> colnames(mat1)=c("woodland","garden","hedegrow","pasture","parkland")
+Error in dimnames(x) <- dn : 
+  length of 'dimnames' [2] not equal to array extent
+> mat1
+              [,1]      
+Blackbird     "woodland"
+House Sparrow "garden"  
+Robin         "hedegrow"
+Song thrush   "pasture" 
+Myna          "parkland"
+> mat=cbind("woodland","garden","hedegrow","pasture","parkland")
+> mat1=matrix(mat,nrow=5)
+> rownames(mat1)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+> colnames(mat1)=c("woodland","garden","hedegrow","pasture","parkland")
+Error in dimnames(x) <- dn : 
+  length of 'dimnames' [2] not equal to array extent
+> colnames(mat)=c("woodland","garden","hedegrow","pasture","parkland")
+> mat1
+              [,1]      
+Blackbird     "woodland"
+House Sparrow "garden"  
+Robin         "hedegrow"
+Song thrush   "pasture" 
+Myna          "parkland"
+> mat
+     woodland   garden   hedegrow   pasture   parkland  
+[1,] "woodland" "garden" "hedegrow" "pasture" "parkland"
+>  woodland=c(2,1,2,2,1)
+> > garden=c(47,19,50,46,9)
+Error: unexpected '>' in ">"
+> > hedegrow=c(16,3,3,16,3)
+Error: unexpected '>' in ">"
+> > pasture=c(2,1,7,1,4)
+Error: unexpected '>' in ">"
+> > parkland=c(40,5,10,8,7)
+Error: unexpected '>' in ">"
+> > mat=cbind("woodland","garden","hedegrow","pasture","parkland")
+Error: unexpected '>' in ">"
+> woodland=c(2,1,2,2,1)
+> > garden=c(47,19,50,46,9)
+Error: unexpected '>' in ">"
+> garden=c(47,19,50,46,9)
+> hedegrow=c(16,3,3,16,3)
+> pasture=c(2,1,7,1,4)
+> parkland=c(40,5,10,8,7)
+>  mat=cbind("woodland","garden","hedegrow","pasture","parkland")
+> mat1=matrix(mat,nrow=5)
+> rownames(mat1)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+> colnames(mat1)=c("woodland","garden","hedegrow","pasture","parkland")
+Error in dimnames(x) <- dn : 
+  length of 'dimnames' [2] not equal to array extent
+> mat1=matrix(mat,nrow=5)
+> mat1=matrix(mat,nrow=5,ncol=5)
+> rownames(mat1)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+> colnames(mat1)=c("woodland","garden","hedegrow","pasture","parkland")
+> mat1
+              woodland   garden     hedegrow   pasture    parkland  
+Blackbird     "woodland" "woodland" "woodland" "woodland" "woodland"
+House Sparrow "garden"   "garden"   "garden"   "garden"   "garden"  
+Robin         "hedegrow" "hedegrow" "hedegrow" "hedegrow" "hedegrow"
+Song thrush   "pasture"  "pasture"  "pasture"  "pasture"  "pasture" 
+Myna          "parkland" "parkland" "parkland" "parkland" "parkland"
+> colnames(mat1)=c("woodland","garden","hedegrow","pasture","parkland")
+> mat1
+              woodland   garden     hedegrow   pasture    parkland  
+Blackbird     "woodland" "woodland" "woodland" "woodland" "woodland"
+House Sparrow "garden"   "garden"   "garden"   "garden"   "garden"  
+Robin         "hedegrow" "hedegrow" "hedegrow" "hedegrow" "hedegrow"
+Song thrush   "pasture"  "pasture"  "pasture"  "pasture"  "pasture" 
+Myna          "parkland" "parkland" "parkland" "parkland" "parkland"
+> woodland=c(2,1,2,2,1)
+> garden=c(47,19,50,46,9)
+> hedegrow=c(16,3,3,16,3)
+> pasture=c(2,1,7,1,4)
+> parkland=c(40,5,10,8,7)
+>  mat=cbind(woodland,garden,hedegrow,pasture,parkland)
+> mat1=matrix(mat,nrow=5,ncol=5)
+> rownames(mat1)=c("Blackbird","House Sparrow","Robin","Song thrush","Myna")
+> colnames(mat1)=c("woodland","garden","hedegrow","pasture","parkland")
+> mat1
+              woodland garden hedegrow pasture parkland
+Blackbird            2     47       16       2       40
+House Sparrow        1     19        3       1        5
+Robin                2     50        3       7       10
+Song thrush          2     46       16       1        8
+Myna                 1      9        3       4        7
+> total=colSums(mat1)
+> total
+woodland   garden hedegrow  pasture parkland 
+       8      171       41       15       70 
+> barplot(total,xlab="Habitat",ylab="No of Birds",main="BAR PLOT")
+> col=white
+Error: object 'white' not found
+> barplot(total,xlab="Habitat",ylab="No of Birds",main="BAR PLOT",col=white)
+Error in barplot.default(total, xlab = "Habitat", ylab = "No of Birds",  : 
+  object 'white' not found
+> barplot(total,xlab="Habitat",ylab="No of Birds",main="BAR PLOT",col="white")
+> barplot
+function (height, ...) 
+UseMethod("barplot")
+<bytecode: 0x0000000015093268>
+<environment: namespace:graphics>
+> #clustered or stacked barplot for each species whithin a particular habitat
+> barplot(mat1,xlab="Habitat",ylab="Species of Birds",main="BAR PLOT",ylim=c(0,70),legend= T)
+> barplot(mat1,xlab="Habitat",ylab="Species of Birds",main="BAR PLOT",ylim=c(0,180),legend= T)
+> 

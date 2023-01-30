@@ -1,0 +1,406 @@
+> x=(1,2,3,45,6,78)
+Error: unexpected ',' in "x=(1,"
+> x=c(1,2,3,45,6,78)
+> y=c("abhishek kumar","open","closed","open","closed")
+> file1=list(Number=x,Area=y)
+> file1
+$Number
+[1]  1  2  3 45  6 78
+
+$Area
+[1] "abhishek kumar" "open"           "closed"         "open"           "closed"        
+
+> list
+function (...)  .Primitive("list")
+> #to check nature 
+> str(file1
++ str(file1)
+Error: unexpected symbol in:
+"str(file1
+str"
+> str(file1)
+List of 2
+ $ Number: num [1:6] 1 2 3 45 6 78
+ $ Area  : chr [1:5] "abhishek kumar" "open" "closed" "open" ...
+> #Data frame
+> data1=data.frame(x,y)
+Error in data.frame(x, y) : 
+  arguments imply differing number of rows: 6, 5
+> y=legth(5)
+Error in legth(5) : could not find function "legth"
+> y=length(5)
+> y
+[1] 1
+> data1=data.frame(x,y)
+> data1
+   x y
+1  1 1
+2  2 1
+3  3 1
+4 45 1
+5  6 1
+6 78 1
+> colnames(data1)c("Number","Area")
+Error: unexpected symbol in "colnames(data1)c"
+> colnames(data1)=c("Number","Area")
+> rownames(data1)=c("a1","a2","a3","a4","a5")
+Error in `.rowNamesDF<-`(x, value = value) : invalid 'row.names' length
+> rownames(data1)=c("a1","a2","a3","a4","a5","a6")
+> data1
+   Number Area
+a1      1    1
+a2      2    1
+a3      3    1
+a4     45    1
+a5      6    1
+a6     78    1
+> y=c("abhishek kumar","open","closed","open","closed","open")
+> data1
+   Number Area
+a1      1    1
+a2      2    1
+a3      3    1
+a4     45    1
+a5      6    1
+a6     78    1
+> file1=list(Number=x,Area=y)
+> data1=data.frame(x,y)
+> colnames(data1)=c("Number","Area")
+> rownames(data1)=c("a1","a2","a3","a4","a5","a6")
+> data1
+   Number           Area
+a1      1 abhishek kumar
+a2      2           open
+a3      3         closed
+a4     45           open
+a5      6         closed
+a6     78           open
+> class(data1)
+[1] "data.frame"
+> objects(data1)
+[1] "Area"   "Number"
+> str(data1)
+'data.frame':   6 obs. of  2 variables:
+ $ Number: num  1 2 3 45 6 78
+ $ Area  : chr  "abhishek kumar" "open" "closed" "open" ...
+> y=c("closed","open","closed","open","closed","open")
+> file1=list(Number=x,Area=y)
+> data1=data.frame(x,y)
+> colnames(data1)=c("Number","Area")
+> rownames(data1)=c("a1","a2","a3","a4","a5","a6")
+> data1
+   Number   Area
+a1      1 closed
+a2      2   open
+a3      3 closed
+a4     45   open
+a5      6 closed
+a6     78   open
+> str(data1)
+'data.frame':   6 obs. of  2 variables:
+ $ Number: num  1 2 3 45 6 78
+ $ Area  : chr  "closed" "open" "closed" "open" ...
+> data2=data.frame(x,y,stringAsFactor=T)
+> data2
+   x      y stringAsFactor
+1  1 closed           TRUE
+2  2   open           TRUE
+3  3 closed           TRUE
+4 45   open           TRUE
+5  6 closed           TRUE
+6 78   open           TRUE
+> str(data2)
+'data.frame':   6 obs. of  3 variables:
+ $ x             : num  1 2 3 45 6 78
+ $ y             : chr  "closed" "open" "closed" "open" ...
+ $ stringAsFactor: logi  TRUE TRUE TRUE TRUE TRUE TRUE
+> data2=data.frame(x,y,stringAsFactor=F)
+> str(data2)
+'data.frame':   6 obs. of  3 variables:
+ $ x             : num  1 2 3 45 6 78
+ $ y             : chr  "closed" "open" "closed" "open" ...
+ $ stringAsFactor: logi  FALSE FALSE FALSE FALSE FALSE FALSE
+> data2=data.frame(x,y, stringAsFactor=F)
+> data2
+   x      y stringAsFactor
+1  1 closed          FALSE
+2  2   open          FALSE
+3  3 closed          FALSE
+4 45   open          FALSE
+5  6 closed          FALSE
+6 78   open          FALSE
+> str(data2)'
++ str(data2)
++ 
++ '
+Error: unexpected string constant in:
+"
+'"
+> str(data2)
+'data.frame':   6 obs. of  3 variables:
+ $ x             : num  1 2 3 45 6 78
+ $ y             : chr  "closed" "open" "closed" "open" ...
+ $ stringAsFactor: logi  FALSE FALSE FALSE FALSE FALSE FALSE
+> data2$x
+[1]  1  2  3 45  6 78
+> z=data2$x
+> data2
+   x      y stringAsFactor
+1  1 closed          FALSE
+2  2   open          FALSE
+3  3 closed          FALSE
+4 45   open          FALSE
+5  6 closed          FALSE
+6 78   open          FALSE
+> dta3=data.frame(x,y)
+> dta3
+   x      y
+1  1 closed
+2  2   open
+3  3 closed
+4 45   open
+5  6 closed
+6 78   open
+> z
+[1]  1  2  3 45  6 78
+> x=seq(1,100,1)
+> x
+  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40
+ [41]  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80
+ [81]  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+> y=seq(a,z,)
+Error in seq.default(a, z, ) : 'from' must be of length 1
+> y=rep(c("open","closed"),100)
+> y
+  [1] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+ [19] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+ [37] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+ [55] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+ [73] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+ [91] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+[109] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+[127] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+[145] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+[163] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+[181] "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed" "open"   "closed"
+[199] "open"   "closed"
+> data3=data.frame(x,y)
+> colnames(data3)=c("number","area")
+> rownames=rep(c(a:z),100)
+Warning messages:
+1: In a:z : numerical expression has 10 elements: only the first used
+2: In a:z : numerical expression has 6 elements: only the first used
+> data3=data.frame(x,y, stringAsFactor=F)
+> str(data3
++ ;
+Error: unexpected ';' in:
+"str(data3
+;"
+> str(data3)
+'data.frame':   200 obs. of  3 variables:
+ $ x             : num  1 2 3 4 5 6 7 8 9 10 ...
+ $ y             : chr  "open" "closed" "open" "closed" ...
+ $ stringAsFactor: logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+> data3
+      x      y stringAsFactor
+1     1   open          FALSE
+2     2 closed          FALSE
+3     3   open          FALSE
+4     4 closed          FALSE
+5     5   open          FALSE
+6     6 closed          FALSE
+7     7   open          FALSE
+8     8 closed          FALSE
+9     9   open          FALSE
+10   10 closed          FALSE
+11   11   open          FALSE
+12   12 closed          FALSE
+13   13   open          FALSE
+14   14 closed          FALSE
+15   15   open          FALSE
+16   16 closed          FALSE
+17   17   open          FALSE
+18   18 closed          FALSE
+19   19   open          FALSE
+20   20 closed          FALSE
+21   21   open          FALSE
+22   22 closed          FALSE
+23   23   open          FALSE
+24   24 closed          FALSE
+25   25   open          FALSE
+26   26 closed          FALSE
+27   27   open          FALSE
+28   28 closed          FALSE
+29   29   open          FALSE
+30   30 closed          FALSE
+31   31   open          FALSE
+32   32 closed          FALSE
+33   33   open          FALSE
+34   34 closed          FALSE
+35   35   open          FALSE
+36   36 closed          FALSE
+37   37   open          FALSE
+38   38 closed          FALSE
+39   39   open          FALSE
+40   40 closed          FALSE
+41   41   open          FALSE
+42   42 closed          FALSE
+43   43   open          FALSE
+44   44 closed          FALSE
+45   45   open          FALSE
+46   46 closed          FALSE
+47   47   open          FALSE
+48   48 closed          FALSE
+49   49   open          FALSE
+50   50 closed          FALSE
+51   51   open          FALSE
+52   52 closed          FALSE
+53   53   open          FALSE
+54   54 closed          FALSE
+55   55   open          FALSE
+56   56 closed          FALSE
+57   57   open          FALSE
+58   58 closed          FALSE
+59   59   open          FALSE
+60   60 closed          FALSE
+61   61   open          FALSE
+62   62 closed          FALSE
+63   63   open          FALSE
+64   64 closed          FALSE
+65   65   open          FALSE
+66   66 closed          FALSE
+67   67   open          FALSE
+68   68 closed          FALSE
+69   69   open          FALSE
+70   70 closed          FALSE
+71   71   open          FALSE
+72   72 closed          FALSE
+73   73   open          FALSE
+74   74 closed          FALSE
+75   75   open          FALSE
+76   76 closed          FALSE
+77   77   open          FALSE
+78   78 closed          FALSE
+79   79   open          FALSE
+80   80 closed          FALSE
+81   81   open          FALSE
+82   82 closed          FALSE
+83   83   open          FALSE
+84   84 closed          FALSE
+85   85   open          FALSE
+86   86 closed          FALSE
+87   87   open          FALSE
+88   88 closed          FALSE
+89   89   open          FALSE
+90   90 closed          FALSE
+91   91   open          FALSE
+92   92 closed          FALSE
+93   93   open          FALSE
+94   94 closed          FALSE
+95   95   open          FALSE
+96   96 closed          FALSE
+97   97   open          FALSE
+98   98 closed          FALSE
+99   99   open          FALSE
+100 100 closed          FALSE
+101   1   open          FALSE
+102   2 closed          FALSE
+103   3   open          FALSE
+104   4 closed          FALSE
+105   5   open          FALSE
+106   6 closed          FALSE
+107   7   open          FALSE
+108   8 closed          FALSE
+109   9   open          FALSE
+110  10 closed          FALSE
+111  11   open          FALSE
+112  12 closed          FALSE
+113  13   open          FALSE
+114  14 closed          FALSE
+115  15   open          FALSE
+116  16 closed          FALSE
+117  17   open          FALSE
+118  18 closed          FALSE
+119  19   open          FALSE
+120  20 closed          FALSE
+121  21   open          FALSE
+122  22 closed          FALSE
+123  23   open          FALSE
+124  24 closed          FALSE
+125  25   open          FALSE
+126  26 closed          FALSE
+127  27   open          FALSE
+128  28 closed          FALSE
+129  29   open          FALSE
+130  30 closed          FALSE
+131  31   open          FALSE
+132  32 closed          FALSE
+133  33   open          FALSE
+134  34 closed          FALSE
+135  35   open          FALSE
+136  36 closed          FALSE
+137  37   open          FALSE
+138  38 closed          FALSE
+139  39   open          FALSE
+140  40 closed          FALSE
+141  41   open          FALSE
+142  42 closed          FALSE
+143  43   open          FALSE
+144  44 closed          FALSE
+145  45   open          FALSE
+146  46 closed          FALSE
+147  47   open          FALSE
+148  48 closed          FALSE
+149  49   open          FALSE
+150  50 closed          FALSE
+151  51   open          FALSE
+152  52 closed          FALSE
+153  53   open          FALSE
+154  54 closed          FALSE
+155  55   open          FALSE
+156  56 closed          FALSE
+157  57   open          FALSE
+158  58 closed          FALSE
+159  59   open          FALSE
+160  60 closed          FALSE
+161  61   open          FALSE
+162  62 closed          FALSE
+163  63   open          FALSE
+164  64 closed          FALSE
+165  65   open          FALSE
+166  66 closed          FALSE
+167  67   open          FALSE
+168  68 closed          FALSE
+169  69   open          FALSE
+170  70 closed          FALSE
+171  71   open          FALSE
+172  72 closed          FALSE
+173  73   open          FALSE
+174  74 closed          FALSE
+175  75   open          FALSE
+176  76 closed          FALSE
+177  77   open          FALSE
+178  78 closed          FALSE
+179  79   open          FALSE
+180  80 closed          FALSE
+181  81   open          FALSE
+182  82 closed          FALSE
+183  83   open          FALSE
+184  84 closed          FALSE
+185  85   open          FALSE
+186  86 closed          FALSE
+187  87   open          FALSE
+188  88 closed          FALSE
+189  89   open          FALSE
+190  90 closed          FALSE
+191  91   open          FALSE
+192  92 closed          FALSE
+193  93   open          FALSE
+194  94 closed          FALSE
+195  95   open          FALSE
+196  96 closed          FALSE
+197  97   open          FALSE
+198  98 closed          FALSE
+199  99   open          FALSE
+200 100 closed          FALSE
+> z

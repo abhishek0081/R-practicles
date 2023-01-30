@@ -1,0 +1,58 @@
+> #practical 7 
+> #use of same data as practical 6
+> #import data from excel
+> data7=read.table("PRACTICAL6.csv",sep=",",header=T,stringsAsFactors=T)
+> str(data7)
+'data.frame':   25 obs. of  5 variables:
+ $ Roll.No  : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Maths    : int  34 14 12 56 78 89 99 88 56 45 ...
+ $ Physics  : int  43 4 7 76 86 56 46 98 12 65 ...
+ $ Chemistry: int  42 2 3 54 89 56 76 98 54 45 ...
+ $ Section  : Factor w/ 3 levels "A","B","C": 1 2 3 1 2 3 1 2 3 1 ...
+> data7
+   Roll.No Maths Physics Chemistry Section
+1        1    34      43        42       A
+2        2    14       4         2       B
+3        3    12       7         3       C
+4        4    56      76        54       A
+5        5    78      86        89       B
+6        6    89      56        56       C
+7        7    99      46        76       A
+8        8    88      98        98       B
+9        9    56      12        54       C
+10      10    45      65        45       A
+11      11    45      45        65       B
+12      12    44      43        34       C
+13      13    34      45        43       A
+14      14    33      54        55       B
+15      15    23      54        88       C
+16      16    78      34        76       A
+17      17    75      55        75       B
+18      18    87      45        76       C
+19      19    98      54        76       A
+20      20   100      56        65       B
+21      21    19      65        54       C
+22      22    10      67        45       A
+23      23    89      66        66       B
+24      24    95      97        98       C
+25      25    83      45        87       A
+> x=data7$Maths
+> y=data7$Physics
+> z=data7$Chemistry
+> corr.coeff12=cor(x,y)
+> corr.coeff32=cor(z,y)
+> corr.coeff31=cor(z,x)
+> c(corr.coeff12,corr.coeff32,corr.coeff31)
+[1] 0.3912517 0.6624105 0.6965149
+> cor(data7[2:4])
+              Maths   Physics Chemistry
+Maths     1.0000000 0.3912517 0.6965149
+Physics   0.3912517 1.0000000 0.6624105
+Chemistry 0.6965149 0.6624105 1.0000000
+> #Scatetr plot
+> par(mfrow=c(1,3))
+> plot(x,y,xlab="Maths",ylab="Physics",main="Scatter Plot")
+> plot(z,y,xlab="Chemistry",ylab="Physics",main="Scatter Plot")
+> plot(z,x,xlab="Chemistry",ylab="Maths",main="Scatter Plot")
+> plot(data7[2:4])
+> 

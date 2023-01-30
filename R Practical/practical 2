@@ -1,0 +1,198 @@
+>  #practical 2
+> #To Enter Data ofj each Variable through Vector
+> #To Enter Data of each Variable throgh Vector
+> #To Enter Data for five Variable through Vector
+> #Two Sring var ROll NO. and Section for 20 students
+> #threee numeric var on marks in three subjects
+> Roll_no=seq(1:20)
+> Roll_no
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+> section=rep(c("Section A","Section B","Section C"),c(7,7,6))
+> section
+ [1] "Section A" "Section A" "Section A" "Section A" "Section A" "Section A" "Section A" "Section B" "Section B" "Section B" "Section B" "Section B" "Section B"
+[14] "Section B" "Section C" "Section C" "Section C" "Section C" "Section C" "Section C"
+> sub1=random(1:100)
+Error in random(1:100) : could not find function "random"
+> sub1=c(23,34,45,67,65,45,34,23,45,56,54,5,66,34,56,7,4,53,24,42)
+> sub2=c(43,24,42,7,5,95,74,63,65,56,54,55,56,54,46,67,76,83,54,72)
+> sub3=c(3,54,52,37,55,55,24,13,45,66,64,75,7,74,43,47,26,23,64,82)
+> #Q1:Construct a dataframe of above five variables.
+> #Q2:Construct a dataframe of above five variables and examine the structure of this file.
+> data1=data.frame(Roll_no,section,sub1,sub2,sub3)
+> data1
+   Roll_no   section sub1 sub2 sub3
+1        1 Section A   23   43    3
+2        2 Section A   34   24   54
+3        3 Section A   45   42   52
+4        4 Section A   67    7   37
+5        5 Section A   65    5   55
+6        6 Section A   45   95   55
+7        7 Section A   34   74   24
+8        8 Section B   23   63   13
+9        9 Section B   45   65   45
+10      10 Section B   56   56   66
+11      11 Section B   54   54   64
+12      12 Section B    5   55   75
+13      13 Section B   66   56    7
+14      14 Section B   34   54   74
+15      15 Section C   56   46   43
+16      16 Section C    7   67   47
+17      17 Section C    4   76   26
+18      18 Section C   53   83   23
+19      19 Section C   24   54   64
+20      20 Section C   42   72   82
+> str(data1)
+'data.frame':   20 obs. of  5 variables:
+ $ Roll_no: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ section: chr  "Section A" "Section A" "Section A" "Section A" ...
+ $ sub1   : num  23 34 45 67 65 45 34 23 45 56 ...
+ $ sub2   : num  43 24 42 7 5 95 74 63 65 56 ...
+ $ sub3   : num  3 54 52 37 55 55 24 13 45 66 ...
+> data1=data.frame(Roll_no,section,sub1,sub2,sub3,stringsAsFactor=T)
+> str(data1)
+'data.frame':   20 obs. of  6 variables:
+ $ Roll_no        : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ section        : chr  "Section A" "Section A" "Section A" "Section A" ...
+ $ sub1           : num  23 34 45 67 65 45 34 23 45 56 ...
+ $ sub2           : num  43 24 42 7 5 95 74 63 65 56 ...
+ $ sub3           : num  3 54 52 37 55 55 24 13 45 66 ...
+ $ stringsAsFactor: logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
+> #Total and average marks for each student
+> total.marks=rowSums(data1[,c(3,4,5)])
+> total.marks
+ [1]  69 112 139 111 125 195 132  99 155 178 172 135 129 162 145 121 106 159 142 196
+> average.marks=rowMeans(data1[,c(3,4,5)])
+> average.marks
+ [1] 23.00000 37.33333 46.33333 37.00000 41.66667 65.00000 44.00000 33.00000 51.66667 59.33333 57.33333 45.00000 43.00000 54.00000 48.33333 40.33333 35.33333 53.00000
+[19] 47.33333 65.33333
+> #Grade the students
+> #a/c to avg marks
+> grade=c()
+> grade[average.marks>=85]=1
+> 
+> grade[average.marks<85 & average.marks>=65]=2
+> grade[average.marks<65]=3
+> grade
+ [1] 3 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2
+> #Convert grade to a factor variable with lables A,B,C
+> grade=factor(grade,label=c("A","B","C"))
+Error in factor(grade, label = c("A", "B", "C")) : 
+  invalid 'labels'; length 3 should be 1 or 2
+> grade
+ [1] 3 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2
+> 
+> grade=c("A"=1,"B"=2,"C"=3)
+> data2=data.frame(data1,total.marks,average.marks,grade)
+Error in data.frame(data1, total.marks, average.marks, grade) : 
+  arguments imply differing number of rows: 20, 3
+> grade=c(A=1,B=2,C=3)
+> data2=data.frame(data1,total.marks,average.marks,grade)
+Error in data.frame(data1, total.marks, average.marks, grade) : 
+  arguments imply differing number of rows: 20, 3
+> grade=c(B=2,C=3)
+> data2=data.frame(data1,total.marks,average.marks,grade)
+Warning message:
+In data.frame(data1, total.marks, average.marks, grade) :
+  row names were found from a short variable and have been discarded
+> grade=factor(grade,label=c("B","C"))
+> data2=data.frame(data1,total.marks,average.marks,grade)
+Warning message:
+In data.frame(data1, total.marks, average.marks, grade) :
+  row names were found from a short variable and have been discarded
+> grade=factor(grade,label=c("A","B","C"))
+Error in factor(grade, label = c("A", "B", "C")) : 
+  invalid 'labels'; length 3 should be 1 or 2
+> data2=data.frame(data1,total.marks,average.marks,grade)
+Warning message:
+In data.frame(data1, total.marks, average.marks, grade) :
+  row names were found from a short variable and have been discarded
+> data2
+   Roll_no   section sub1 sub2 sub3 stringsAsFactor total.marks average.marks grade
+1        1 Section A   23   43    3            TRUE          69      23.00000     B
+2        2 Section A   34   24   54            TRUE         112      37.33333     C
+3        3 Section A   45   42   52            TRUE         139      46.33333     B
+4        4 Section A   67    7   37            TRUE         111      37.00000     C
+5        5 Section A   65    5   55            TRUE         125      41.66667     B
+6        6 Section A   45   95   55            TRUE         195      65.00000     C
+7        7 Section A   34   74   24            TRUE         132      44.00000     B
+8        8 Section B   23   63   13            TRUE          99      33.00000     C
+9        9 Section B   45   65   45            TRUE         155      51.66667     B
+10      10 Section B   56   56   66            TRUE         178      59.33333     C
+11      11 Section B   54   54   64            TRUE         172      57.33333     B
+12      12 Section B    5   55   75            TRUE         135      45.00000     C
+13      13 Section B   66   56    7            TRUE         129      43.00000     B
+14      14 Section B   34   54   74            TRUE         162      54.00000     C
+15      15 Section C   56   46   43            TRUE         145      48.33333     B
+16      16 Section C    7   67   47            TRUE         121      40.33333     C
+17      17 Section C    4   76   26            TRUE         106      35.33333     B
+18      18 Section C   53   83   23            TRUE         159      53.00000     C
+19      19 Section C   24   54   64            TRUE         142      47.33333     B
+20      20 Section C   42   72   82            TRUE         196      65.33333     C
+> grade=factor(grade,label=c("B","C"))
+> data2=data.frame(data1,total.marks,average.marks,grade)
+Warning message:
+In data.frame(data1, total.marks, average.marks, grade) :
+  row names were found from a short variable and have been discarded
+> data2
+   Roll_no   section sub1 sub2 sub3 stringsAsFactor total.marks average.marks grade
+1        1 Section A   23   43    3            TRUE          69      23.00000     B
+2        2 Section A   34   24   54            TRUE         112      37.33333     C
+3        3 Section A   45   42   52            TRUE         139      46.33333     B
+4        4 Section A   67    7   37            TRUE         111      37.00000     C
+5        5 Section A   65    5   55            TRUE         125      41.66667     B
+6        6 Section A   45   95   55            TRUE         195      65.00000     C
+7        7 Section A   34   74   24            TRUE         132      44.00000     B
+8        8 Section B   23   63   13            TRUE          99      33.00000     C
+9        9 Section B   45   65   45            TRUE         155      51.66667     B
+10      10 Section B   56   56   66            TRUE         178      59.33333     C
+11      11 Section B   54   54   64            TRUE         172      57.33333     B
+12      12 Section B    5   55   75            TRUE         135      45.00000     C
+13      13 Section B   66   56    7            TRUE         129      43.00000     B
+14      14 Section B   34   54   74            TRUE         162      54.00000     C
+15      15 Section C   56   46   43            TRUE         145      48.33333     B
+16      16 Section C    7   67   47            TRUE         121      40.33333     C
+17      17 Section C    4   76   26            TRUE         106      35.33333     B
+18      18 Section C   53   83   23            TRUE         159      53.00000     C
+19      19 Section C   24   54   64            TRUE         142      47.33333     B
+20      20 Section C   42   72   82            TRUE         196      65.33333     C
+> grade=c()
+> grade[average.marks>=85]=1
+> grade[average.marks<85 & average.marks>=65]=2
+> grade[average.marks<65]=3
+> grade
+ [1] 3 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2
+> grade=factor(grade,label=c("B","C"))
+> data2=data.frame(data1,total.marks,average.marks,grade)
+> data2
+   Roll_no   section sub1 sub2 sub3 stringsAsFactor total.marks average.marks grade
+1        1 Section A   23   43    3            TRUE          69      23.00000     C
+2        2 Section A   34   24   54            TRUE         112      37.33333     C
+3        3 Section A   45   42   52            TRUE         139      46.33333     C
+4        4 Section A   67    7   37            TRUE         111      37.00000     C
+5        5 Section A   65    5   55            TRUE         125      41.66667     C
+6        6 Section A   45   95   55            TRUE         195      65.00000     B
+7        7 Section A   34   74   24            TRUE         132      44.00000     C
+8        8 Section B   23   63   13            TRUE          99      33.00000     C
+9        9 Section B   45   65   45            TRUE         155      51.66667     C
+10      10 Section B   56   56   66            TRUE         178      59.33333     C
+11      11 Section B   54   54   64            TRUE         172      57.33333     C
+12      12 Section B    5   55   75            TRUE         135      45.00000     C
+13      13 Section B   66   56    7            TRUE         129      43.00000     C
+14      14 Section B   34   54   74            TRUE         162      54.00000     C
+15      15 Section C   56   46   43            TRUE         145      48.33333     C
+16      16 Section C    7   67   47            TRUE         121      40.33333     C
+17      17 Section C    4   76   26            TRUE         106      35.33333     C
+18      18 Section C   53   83   23            TRUE         159      53.00000     C
+19      19 Section C   24   54   64            TRUE         142      47.33333     C
+20      20 Section C   42   72   82            TRUE         196      65.33333     B
+> #contigency table between Section and Grade of the students USe var from the dataframe
+> table(data2$Section, data2$grade)
+Error in table(data2$Section, data2$grade) : 
+  all arguments must have the same length
+> table(data2$section, data2$grade)
+           
+            B C
+  Section A 1 6
+  Section B 0 7
+  Section C 1 5
+>  
